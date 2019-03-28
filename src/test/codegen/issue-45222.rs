@@ -1,3 +1,5 @@
+// ignore-test LLVM can't prove that these loops terminate.
+
 // compile-flags: -O
 
 #![crate_type = "lib"]

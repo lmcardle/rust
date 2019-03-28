@@ -484,6 +484,7 @@ impl<'a, 'tcx: 'a, Bx: BuilderMethods<'a, 'tcx>> FunctionCx<'a, 'tcx, Bx> {
                 };
                 let instance = ty::Instance::mono(bx.tcx(), def_id);
                 let r = bx.cx().get_fn(instance);
+                bx.sideeffect();
                 let call = bx.call(r, &[llsize, llalign], None);
                 let val = bx.pointercast(call, llty_ptr);
 
